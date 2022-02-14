@@ -1,10 +1,11 @@
-#Creator
+# Creator
 - Vikas Surera
 - IIT Kharagpur
-#Planning
+# Planning
+Image Link: https://www.figma.com/file/joTcNg3vlOVQ0jLc2rKui8/Invoice-api
 ![alt text](./Invoice%20api.png)
 
-##Features in the project
+## Features in the project
 ### 1. Create Invoices
 Create an invoice using the post request
 ```
@@ -36,13 +37,13 @@ node-cron jobs
 ### 7. Data validation
 All data is validated to counter the user error while posting and updating the api requests
 
-#Installation
+# Installation
 Install all dependencies
 ```
 run npm i
 ```
 
-###Dependencies
+### Dependencies
 ```
 body-parser
 express
@@ -54,7 +55,7 @@ node-cron
 nodemailer
 ```
 
-#Scripts
+# Scripts
 Run the server
 ```
 npm run start
