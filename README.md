@@ -114,7 +114,7 @@ Automated tests for each api end points.
 jest tests
 ```
 ### 6. OverDue Invoice Alerts
-Automated email alerts for Overdue Invoices
+Automated email alerts for Overdue Invoices. Checks if the invoices are overdue every minute and sends alert emails to overdue invoices (unsent previously).
 ```
 node-cron jobs
 ```
