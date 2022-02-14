@@ -11,15 +11,100 @@ Create an invoice using the post request
 ```
 POST http://localhost:3000/invoice/
 ```
-### 2. Update Invoice Status
-Update an invoice status as 'OutStanding', 'Payed' or 'Pending'
+Body
 ```
-PUT http://localhost:3000/invoice/
+{
+    "hours": 5,
+    "rate": 5,
+    "expenses": 5,
+    "labor": 5,
+
+    "total_amount":5,
+
+    "notes": "notes",
+    "payment_mode": "mode",
+    "payment_destination": "dest",
+    "due": 1644774133,
+    "status": "Outstanding",
+    "recipient_email": "vikassurera@gmail.com"
+}
+```
+Response
+```
+{
+    "hours": 5,
+    "rate": 5,
+    "expenses": 5,
+    "labor": 5,
+    "total_amount": 5,
+    "notes": "notes",
+    "payment_mode": "mode",
+    "payment_destination": "dest",
+    "due": 1644774133,
+    "status": "pending",
+    "recipient_email": "gandu@gmail.com",
+    "_id": "62094550190015de04177ba6",
+    "__v": 0
+}
+```
+### 2. Update Invoice Status
+Update an invoice status
+#### Valid Invoice Status
+- Outstanding
+- Payed
+- Pending
+Provide invoiceId
+```
+PUT http://localhost:3000/invoice/:id/
+```
+Body
+```
+{
+    status: 'Payed'
+}
+```
+Response
+```
+{
+    "_id": "62094550190015de04177ba6",
+    "hours": 5,
+    "rate": 5,
+    "expenses": 5,
+    "labor": 5,
+    "total_amount": 5,
+    "notes": "notes",
+    "payment_mode": "mode",
+    "payment_destination": "dest",
+    "due": 1644774133,
+    "status": "payed",
+    "recipient_email": "gandu@gmail.com",
+    "__v": 0
+}
 ```
 ### 3. View Invoices
 View all invoices in the database
 ```
 GET http://localhost:3000/invoice/
+```
+Response
+```
+[
+    {
+        "_id": "62094550190015de04177ba6",
+        "hours": 5,
+        "rate": 5,
+        "expenses": 5,
+        "labor": 5,
+        "total_amount": 5,
+        "notes": "notes",
+        "payment_mode": "mode",
+        "payment_destination": "dest",
+        "due": 1644774133,
+        "status": "payed",
+        "recipient_email": "gandu@gmail.com",
+        "__v": 0
+    }
+]
 ```
 ### 4. Send Emails
 Send email to the recipient of the invoice on invoice creation and update.
