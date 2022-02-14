@@ -147,7 +147,7 @@ npm run start
 ```
 Run the tests
 ```
-npm run job
+npm run test
 ```
 Run the job
 ```
