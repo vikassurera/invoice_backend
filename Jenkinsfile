@@ -4,25 +4,19 @@ pipeline{
     stages{
         stage('Compile Stage'){
             steps{
-                withMaven(maven: 'mavenmaven_3_5_0'){
-                    sh 'mvn clean compile'
-                }  
+               echo 'Building...' 
             }
         }
 
         stage('Testing Stage'){
             steps{
-                withMaven(maven: 'mavenmaven_3_5_0'){
-                    sh 'mvn test'
-                }  
+                echo 'Testing...'  
             }
         }
 
         stage('Deploy Stage'){
             steps{
-                withMaven(maven: 'mavenmaven_3_5_0'){
-                    sh 'mvn deploy'
-                }  
+                echo 'Deploying...' 
             }
         }
     }
